@@ -31,8 +31,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub_cred', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
         	    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
                 }
-                sh "docker tag webapp:v${BUILD_NUMBER} saidevopsworld/webapp:v${BUILD_NUMBER}"
-                sh "docker push saidevopsworld/webapp:v${BUILD_NUMBER}"
+                sh "docker tag webapp:v${BUILD_NUMBER} robinwei/webapp:v${BUILD_NUMBER}"
+                sh "docker push robinwei/webapp:v${BUILD_NUMBER}"
             }
         }
         
