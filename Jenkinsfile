@@ -1,7 +1,7 @@
 pipeline {
-//    agent {
-//        label 'node2'
-//    }
+    agent {
+        label 'workernode1'
+    }
       agent any
         
 
@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/darsan-antra/maven-project.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/special-PPT/maven-project.git']]])
             }
         }
         
